@@ -35,6 +35,21 @@ suite('expect', function () {
     }, "expected 'test' to be falsy");
   });
 
+  test('ok()', function(){
+    expect(true).to.be.ok();
+    expect(false).to.not.be.ok();
+    expect(1).to.be.ok();
+    expect(0).to.not.be.ok();
+
+    err(function(){
+      expect('').to.be.ok();
+    }, "expected '' to be truthy");
+
+    err(function(){
+      expect('test').to.not.be.ok();
+    }, "expected 'test' to be falsy");
+  });
+
   test('false', function(){
     expect(false).to.be.false;
     expect(true).to.not.be.false;
