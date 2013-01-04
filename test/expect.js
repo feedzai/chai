@@ -41,6 +41,8 @@ suite('expect', function () {
     expect(1).to.be.ok();
     expect(0).to.not.be.ok();
 
+    expect(true).to.be.ok().and.to.be.true();
+
     err(function(){
       expect('').to.be.ok();
     }, "expected '' to be truthy");
@@ -270,6 +272,10 @@ suite('expect', function () {
     expect('test').to.have.length(4);
     expect('test').to.not.have.length(3);
     expect([1,2,3]).to.have.length(3);
+
+    expect([1,2,3]).to.have.length(3).and.to.be.a('array');
+    expect([1,2,3]).to.be.a('array').and.to.be.ok();
+    expect([1,2,3]).to.be.a('array').and.to.have.length(3);
 
     err(function(){
       expect(4).to.have.length(3, 'blah');
