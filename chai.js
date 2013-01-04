@@ -2756,6 +2756,20 @@
      * MIT Licensed
      */
     
+    var chainsList = [
+        'to',
+        'be',
+        'been',
+        'is',
+        'that',
+        'and',
+        'have',
+        'with',
+        'at',
+        'of',
+        'not'
+    ];
+    
     /**
      * ### addProperty (ctx, name, getter)
      *
@@ -2788,7 +2802,7 @@
     
             result = result === undefined ? this : result;
     
-            if (result !== Object(result) || name === 'to' || name === 'have' || name === 'not') {
+            if (result !== Object(result) || chainsList.indexOf(name) !== -1) {
                 return result;
             }
     
